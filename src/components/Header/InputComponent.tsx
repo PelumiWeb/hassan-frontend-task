@@ -13,7 +13,7 @@ export interface InputProps {
 function InputComponent({Icon, Text, count}: InputProps ) {
   return (
     <InputComponentWrapper>
-    <Icon  style={{width: 20, marginRight: 10}}/>
+    <Icon  style={{width: 24, marginRight: 10}}/>
     <TextWrapper>{Text}</TextWrapper>
     {!!count && <p>{count}</p>}
     </InputComponentWrapper>
@@ -27,6 +27,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 margin-right: 10px;
+width: 150px;
 
 
 `

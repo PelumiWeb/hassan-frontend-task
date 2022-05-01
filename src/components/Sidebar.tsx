@@ -1,5 +1,4 @@
 import { Avatar } from '@mui/material'
-import React from 'react'
 import styled from "styled-components"
 import PeopleOutlineOutlinedIcon from '@mui/icons-material/PeopleOutlineOutlined';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
@@ -16,8 +15,8 @@ function Sidebar() {
         <FollowButton> 
             Follow
         </FollowButton>
-        <p>{user.bio}</p>
-        <div style={{display: "flex", alignItems: "center", justifyContent: "space-between"}}> 
+        <p style={{textAlign: "center", width: "70%"}}>{user.bio}</p>
+        <div style={{display: "flex", alignItems: "center", justifyContent: "space-between", width: "50%"}}> 
             <div style={{display: "flex", alignItems: "center", justifyContent: "space-between"}}> 
                 <PeopleOutlineOutlinedIcon />
                 <p>{user.followers} followers</p>
@@ -25,6 +24,8 @@ function Sidebar() {
             <p> . </p> 
         <p>{user.following} following</p>
         </div>
+        <div style={{width: "50%"}}> 
+
         <IconComponent >
             <LocationOnOutlinedIcon />
             <p>{user.location}</p>
@@ -37,6 +38,8 @@ function Sidebar() {
             <TwitterIcon />
             <p>{user.twitter_username}</p>
         </IconComponent>
+        </div>
+
     </SidebarWrapper>
   )
 }
@@ -48,10 +51,13 @@ flex: 0.3;
 display: flex;
 flex-direction: column;
 align-items: center;
-
+position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  height: 100%;
 ` 
 const FollowButton = styled.button` 
-width: 70%;
+width: 60%;
 background:whitesmoke;
 color: gray;
 border: 1px solid lightgray;
@@ -60,7 +66,6 @@ padding: 5px;
 `
 
 const IconComponent = styled.div` 
-justify-content: space-between;
     align-items: center;
     display: flex;
 `

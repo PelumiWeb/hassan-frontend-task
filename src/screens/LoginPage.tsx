@@ -1,20 +1,16 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { initializeApp } from 'firebase/app';
 import firebaseConfig from '../config/firebase-config';
 import { getAdditionalUserInfo, getAuth, GithubAuthProvider, signInWithPopup } from 'firebase/auth';
 import {useNavigate} from "react-router-dom"
-import { fetchUserAsync, login } from '../features/user/userSlice';
+import { login } from '../features/user/userSlice';
 import { useAppDispatch } from '../app/hooks';
 
 function LoginPage() {
     const dispatch = useAppDispatch()
     const navigate = useNavigate()
-    // useEffect(() => {
-    //     dispatch(fetchUserAsync("PelumiWeb"))
-    //     navigate("/")
-    // }, [])
 
     const SignInWithGithub = async () => {
         try {

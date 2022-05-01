@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from "styled-components"
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
+import ReactTimeAgo from 'react-time-ago'
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+
 
 function RepositorComponent({data} : any) {
   return (
@@ -9,16 +11,27 @@ function RepositorComponent({data} : any) {
     {/* Left */}
     <LeftRepository> 
     <LeftTop style={{display: "flex"}}> 
-        <Title >{data.name}</Title>
-        <Public>{data.visibility}</Public>
+        <Title >{data?.name}</Title>
+        <Public>{data?.visibility}</Public>
     </LeftTop>
-    <p style={{color: "gray"}}>{data.description}</p>
+    <p style={{color: "gray"}}>{data?.description}</p>
     <LeftBottom>
-       
-            <div style={{backgroundColor: "#2b7489", width: 12, height: 12, borderRadius: "50%", marginRight: 5}}/>
-            <p style={{fontSize: 12}}>{data.language}</p>
-            <p style={{fontSize: 12}}>Updated 5 days ago</p>
-        
+       <div style={{display: "flex", alignItems: "center", justifyContent: "space-between"}}> 
+       <div style={{backgroundColor: "#2b7489", width: 12, height: 12, borderRadius: "50%", marginRight: 5}}/>
+            <p style={{fontSize: 12}}>{data?.language}</p>
+       </div>
+
+    {data?.stargazers_count !== 0 && 
+    <div> 
+      <StarBorderIcon />
+      <p>{data?.stargazers_count}</p>
+      </div>}
+
+       <p>
+         Updated {""}
+            <ReactTimeAgo date={data?.updated_at} locale="en-US"/>
+       </p>
+
 
     </LeftBottom>
     </LeftRepository>
@@ -32,7 +45,7 @@ function RepositorComponent({data} : any) {
         <p style={{fontSize: 12}}>Star</p>
 
         </div>
-        <ExpandMoreIcon style={{borderLeft: `1px solid lightgray`}} />
+        <ArrowDropDownIcon style={{borderLeft: `1px solid lightgray`}} />
     </div>
 
     </RightRepository>
