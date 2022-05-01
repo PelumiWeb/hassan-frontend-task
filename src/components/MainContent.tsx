@@ -70,6 +70,10 @@ width:100% ;
     border: 1px solid lightgray;
     padding: 5px;
     color: gray;
+    &:focus {
+        outline:none ;
+        border: 1px solid lightgray;
+    }
 } 
 
 
