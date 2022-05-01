@@ -40,7 +40,9 @@ function MainContent() {
                 <ArrowDropDownIcon style={{fontWeight: 500}} />
             </div>
         </InputHeader>
-        {status === "loading" && <p>Loading...</p>}
+        {status === "loading" && 
+        <p style={{textAlign: "center", marginTop: 200}}>Loading...</p>
+        }
         {!!repo && repo?.map((data: any) => (
         <RepositoryComponent data={data} />
         ))}
