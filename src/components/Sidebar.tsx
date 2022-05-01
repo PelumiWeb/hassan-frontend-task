@@ -53,7 +53,7 @@ flex-direction: column;
 align-items: center;
 position: -webkit-sticky; /* Safari */
   position: sticky;
-  top: 0;
+  top: 60px;
   height: 100%;
 ` 
 const FollowButton = styled.button` 

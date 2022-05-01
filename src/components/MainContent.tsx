@@ -8,7 +8,6 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 function MainContent() {
     const repo = useAppSelector(selectRepo)
-    console.log(repo)
     const status = useAppSelector(selectStatus)
 
     const dispatch = useAppDispatch()
@@ -27,18 +26,18 @@ function MainContent() {
     <MainContentWrapper>
         {/* Inputs Header */}
         <InputHeader> 
-            <input placeholder='Find a repository' onChange={(e) => setSearchProducts(e.target.value)} />
+            <input placeholder='Find a repository...' onChange={(e) => setSearchProducts(e.target.value)} />
             <div > 
-                <p>Type</p>
+                <SortStyle>Type</SortStyle>
                 <ArrowDropDownIcon />
             </div>
             <div > 
-                <p>Language</p>
+                <SortStyle>Language</SortStyle>
                 <ArrowDropDownIcon />
             </div>
             <div > 
-                <p>Sort</p>
-                <ArrowDropDownIcon />
+                <SortStyle>Sort</SortStyle>
+                <ArrowDropDownIcon style={{fontWeight: 500}} />
             </div>
         </InputHeader>
         {status === "loading" && <p>Loading...</p>}
@@ -91,3 +90,6 @@ width:100% ;
 }
 `
 
+const SortStyle = styled.p`
+    font-weight: 500;
+`

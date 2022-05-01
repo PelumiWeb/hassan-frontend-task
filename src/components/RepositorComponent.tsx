@@ -114,7 +114,7 @@ padding-top: 10px;
         border: 1px solid lightgray;
         color: gray;
         font-weight: bold;
-        margin-right: 10px;
+       margin-right: 45px;;
         padding: 0px 5px;
 
 `
